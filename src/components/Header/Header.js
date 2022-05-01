@@ -4,7 +4,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import molinardLogo from "../../media/logo.png";
-import auth from '../Firebase.init';
+import auth from '../../Firebase.init';
 import CustomLink from './CustomLink/CustomLink';
 
 const Header = () => {
@@ -27,7 +27,7 @@ const Header = () => {
                             <CustomLink className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold' to="/addItems">Add Items</CustomLink>
                             <CustomLink className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold' to="/myItems">My Items</CustomLink>
                             {
-                                user ? <Link onClick={handleSignOut} to="/login" className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold'>SignOut</Link> : <Link className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold' to="/login">LogIn</Link>
+                                user ? <CustomLink onClick={handleSignOut} to="/login" className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold'>SignOut</CustomLink> : <CustomLink className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold' to="/login">LogIn</CustomLink>
                             }
                             
                         </Nav>
