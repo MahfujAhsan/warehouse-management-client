@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import heroBG from "../../media/hero-section-bg.jpg";
 import Inventory from './Inventory/Inventory';
 // const axios = require('axios').default;
@@ -18,8 +19,9 @@ const Home = () => {
             </section>
             <section className='container row gy-5 mt-5'>
                 {
-                    items.map(item => <Inventory key={item._id} item={item} />)
+                    items.slice(0, 6).map(item => <Inventory key={item._id} item={item} />)
                 }
+                <Link to="/manageInventories" className='w-25 mx-auto'>Manage Inventories</Link>
             </section>
 
         </div>
