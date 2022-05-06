@@ -21,9 +21,10 @@ const Home = () => {
                 {
                     items.slice(0, 6).map(item => <Inventory key={item._id} item={item} />)
                 }
-                <Link to="/manageInventories" className='w-25 mx-auto'>Manage Inventories</Link>
             </section>
-
+            <div className='text-center my-4'>
+                <Link to="/manageInventories" className='w-25 mx-auto'>Manage Inventories</Link>
+            </div>
         </div>
     );
 };
