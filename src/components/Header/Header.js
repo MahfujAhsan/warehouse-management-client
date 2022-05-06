@@ -23,9 +23,16 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
                             <CustomLink className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold' to="/">Home</CustomLink>
-                            <CustomLink className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold' to="/manageItems">Manage Items</CustomLink>
-                            <CustomLink className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold' to="/addItems">Add Items</CustomLink>
-                            <CustomLink className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold' to="/myItems">My Items</CustomLink>
+                            {
+                                user ? <CustomLink className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold' to="/manageItems">Manage Items</CustomLink> : ''
+                            }
+                            {
+                                user ? <CustomLink className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold' to="/addItems">Add Items</CustomLink> : ''
+                            }
+                            {
+                                user ? <CustomLink className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold' to="/myItems">My Items</CustomLink> : ''
+                            }
+                            {/* <span>{user?.displayName && user.displayName}</span> */}
                             {
                                 user ? <CustomLink onClick={handleSignOut} to="/login" className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold'>SignOut</CustomLink> : <CustomLink className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold' to="/login">LogIn</CustomLink>
                             }

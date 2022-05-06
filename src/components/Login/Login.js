@@ -8,8 +8,8 @@ import Spinner from '../Spinner/Spinner';
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
-    const navigate = useNavigate();
     const location = useLocation();
+    const navigate = useNavigate();
     let from = location.state?.from?.pathname || "/";
     let errorElement;
 
@@ -34,6 +34,7 @@ const Login = () => {
         const password = passwordRef.current.value;
         console.log(email, password)
         await signInWithEmailAndPassword(email, password);
+        
     };
     const navigateRegister = () => {
         navigate('/signup');
