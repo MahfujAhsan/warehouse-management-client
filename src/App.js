@@ -6,6 +6,7 @@ import AddItems from './components/AddItems/AddItems';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
+import Inventory from './components/Home/Inventory/Inventory';
 import Login from './components/Login/Login';
 import ManageInventories from './components/ManageInventories/ManageInventories';
 import ManageItems from './components/ManageItems/ManageItems';
@@ -19,8 +20,13 @@ function App() {
     <div>
       <Header />
       <Routes>
-      <Route path='/*' element={<NotFound/>}></Route>
+      <Route path='*' element={<NotFound/>}></Route>
         <Route path='/' element={<Home />}></Route>
+        <Route path='/inventory'>
+          <ProtectRoute>
+            <Inventory/>
+          </ProtectRoute>
+        </Route>
         <Route path='/inventory/:itemId' element={
           <ProtectRoute>
             <ManageItems />
