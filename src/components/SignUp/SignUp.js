@@ -37,21 +37,22 @@ const SignUp = () => {
     };
     return (
         <div className='container my-5 w-75'>
+
             <h3 style={{ letterSpacing: "0.1rem" }} className='text-center text-uppercase my-4 fw-bold font-monospace fs-6 fs-3'>Please SignUp</h3>
+            <div className='d-flex justify-content-center flex-column w-100'>
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Your Email' className="shadow-none py-md-3 fs-6 font-monospace m-2 border border-3 border-dark rounded ps-3" />
+                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Secret KeY' className="shadow-none py-md-3 fs-6 font-monospace m-2 border border-3 border-dark rounded ps-3" />
+            </div>
             <form onSubmit={handleSignUp} style={{ fontFamily: "monospace" }} className='w-100 mx-auto'>
                 <div className="d-flex justify-content-between align-items-center">
                     <input style={{ border: "3px solid #BF5737" }} type="text" placeholder='First Name' className="shadow-none py-md-3 fs-6 font-monospace w-100 m-2 rounded ps-3" />
                     <input style={{ border: "3px solid #BF5737" }} type="text" placeholder='Last Name' className="shadow-none py-md-3 fs-6 font-monospace w-100 m-2 rounded ps-3" />
                 </div>
-                <div className='d-flex justify-content-center flex-column w-100'>
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Your Email' className="shadow-none py-md-3 fs-6 font-monospace m-2 border border-3 border-dark rounded ps-3" />
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Secret KeY' className="shadow-none py-md-3 fs-6 font-monospace m-2 border border-3 border-dark rounded ps-3" />
+
+                <div className="">
+                    <input style={{ border: "3px solid #BF5737" }} type="password" ref={confirmPasswordRef} placeholder='Confirm Secret KeY' className="shadow-none py-md-3 fs-6 font-monospace m-2 w-100 rounded ps-3" />
                 </div>
-                
-                    <div className="">
-                        <input style={{ border: "3px solid #BF5737" }} type="password" ref={confirmPasswordRef} placeholder='Confirm Secret KeY' className="shadow-none py-md-3 fs-6 font-monospace m-2 w-100 rounded ps-3" />
-                    </div>
-                
+
                 <div className="">
                     <input style={{ border: "3px solid #BF5737" }} type="tel" placeholder='Your Phone' className="shadow-none py-md-3 fs-6 font-monospace m-2 w-100 rounded ps-3" />
                 </div>

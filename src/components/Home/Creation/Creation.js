@@ -22,7 +22,7 @@ const Creation = () => {
                     </div>
                 </div>
                 <div className='col-12 col-md-6 border border-2 border-dark p-0'>
-                    <iframe  id="ytplayer" type="text/html" width="100%" height="100%" src="https://www.youtube.com/embed/y-0v7fVko_I" frameborder="0"></iframe>
+                    <iframe title='iframe'  id="ytplayer" type="text/html" width="560px" height="600px" src="https://www.youtube.com/embed/y-0v7fVko_I"></iframe>
                 </div>
             </div>
         </div>

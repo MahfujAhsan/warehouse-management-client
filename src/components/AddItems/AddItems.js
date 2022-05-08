@@ -11,12 +11,12 @@ const AddItems = () => {
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const onSubmit = data => {
-        const url = 'https://powerful-dawn-08831.herokuapp.com/inventory'
+        const url = 'https://powerful-dawn-08831.herokuapp.com/addItems'
         fetch(url, {
             method: 'POST',
             body: JSON.stringify({ data }),
             headers: {
-                'authorization': `${user.email} ${localStorage.getItem('accessToken')}`,
+                'authorization': `${user?.email} ${localStorage.getItem('accessToken')}`,
                 'content-type': 'application/json; charsetUFT=8',
             },
         })
