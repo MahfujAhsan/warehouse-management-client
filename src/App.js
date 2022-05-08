@@ -10,6 +10,7 @@ import Login from './components/Login/Login';
 import ManageInventories from './components/ManageInventories/ManageInventories';
 import ManageItems from './components/ManageItems/ManageItems';
 import MyItems from './components/MyItems/MyItems';
+import NotFound from './components/NotFound/NotFound';
 import ProtectRoute from './components/ProtectedRoute/ProtectRoute';
 import SignUp from './components/SignUp/SignUp';
 
@@ -41,6 +42,7 @@ function App() {
         }></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
+        <Route path='*' element={<NotFound/>}></Route>
       </Routes>
       <ToastContainer />
       <Footer />
