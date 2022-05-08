@@ -35,14 +35,14 @@ const ManageItems = () => {
             .then(data => {
                 console.log(data)
             })
-            
+
     };
     const handleRestock = e => {
         e.preventDefault()
         const quantity = parseInt(e.target.restockQuantity.value) + item.quantity;
         const updatedStock = { quantity };
         const url = `https://powerful-dawn-08831.herokuapp.com/inventory/${itemId}`;
-        <Spinner/>
+        <Spinner />
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -54,15 +54,15 @@ const ManageItems = () => {
             .then(data => {
                 console.log(data)
             })
-            e.target.reset();
+        e.target.reset();
     };
     return (
         <div className='container my-3'>
             <div className='row'>
-                <div  className='col-md-5 vh-md-100 d-flex'>
+                <div className='col-md-5 vh-md-100 d-flex'>
                     <div className='border border-2 border-dark rounded p-5 d-md-flex justify-content-center align-items-center w-100'>
                         <form className='text-center d-md-flex flex-column w-100' onSubmit={handleRestock}>
-                            <input style={{ border: '3px solid #BF5737' }} className='py-2 my-2 ps-2 ps-md-3 text-dark rounded' type="number" name="restockQuantity" placeholder='Quantity'/>
+                            <input style={{ border: '3px solid #BF5737' }} className='py-2 my-2 ps-2 ps-md-3 text-dark rounded' type="number" name="restockQuantity" placeholder='Quantity' />
                             <button className='my-2 rounded py-2 fw-bold border border-dark border-3 ms-2 btn btn-dark fs-6'>Stock Update</button>
                         </form>
                     </div>
@@ -109,7 +109,7 @@ const ManageItems = () => {
                 </div>
             </div>
             <div className='text-center my-5 d-flex flex-column'>
-                <Link style={{ border: '3px solid #BF5737'}} className='w-25 mx-auto text-decoration-none px-5 py-3 rounded text-dark fw-bold fs-6 shadow-lg' to="/manageInventories">Manage Inventories</Link>
+                <Link style={{ border: '3px solid #BF5737' }} className='w-25 mx-auto text-decoration-none px-5 py-3 rounded text-dark fw-bold fs-6 shadow-lg' to="/manageInventories">Manage Inventories</Link>
             </div>
         </div>
     );

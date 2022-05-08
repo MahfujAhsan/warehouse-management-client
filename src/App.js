@@ -16,26 +16,34 @@ import SignUp from './components/SignUp/SignUp';
 function App() {
   return (
     <div>
-      <Header/>
+      <Header />
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/inventory/:itemId' element={
           <ProtectRoute>
-            <ManageItems/>
+            <ManageItems />
           </ProtectRoute>
         }></Route>
         <Route path='/manageInventories' element={
           <ProtectRoute>
-            <ManageInventories/>
+            <ManageInventories />
           </ProtectRoute>
         }></Route>
-        <Route path='/addItems' element={<AddItems />}></Route>
-        <Route path='/myItems' element={<MyItems/>}></Route>
+        <Route path='/addItems' element={
+          <ProtectRoute>
+            <AddItems />
+          </ProtectRoute>
+        }></Route>
+        <Route path='/myItems' element={
+          <ProtectRoute>
+            <MyItems />
+          </ProtectRoute>
+        }></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
       </Routes>
-      <ToastContainer/>
-      <Footer/>
+      <ToastContainer />
+      <Footer />
     </div>
   );
 }

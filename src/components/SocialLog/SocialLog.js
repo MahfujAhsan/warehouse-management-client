@@ -30,8 +30,8 @@ const SocialLog = () => {
                 <div className='mx-3 fs-4 font-monospace fw-bold'>Or</div>
                 <div style={{ borderBottom: "4px solid #67696A" }} className='w-25'></div>
             </div>
-            {errorElement}
-            <button onClick={() => signInWithGithub()} className='bg-light fw-bold py-2 px-4 border border-3 border-dark rounded font-monospace' >
+            <p style={{ color: "#BF5737", fontSize: "16px" }} className='text-center fw-bold fs-6 mt-3'>{errorElement}</p>
+            <button onClick={() => signInWithGithub()} className='bg-light fw-bold py-2 px-1 px-md-4 border border-3 border-dark rounded font-monospace fs-5 fs-md-6' >
                 <img src={githubLogo} alt="gitHubLogo" /> <span>Continue with GitHub</span>
             </button>
         </div>

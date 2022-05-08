@@ -25,7 +25,7 @@ const Home = () => {
             <p className='text-dark fw-light mt-4 w-75 mx-auto text-center'>
                 Through the years, driven by the quest to capture the most emblematic perfumery raw materials on Earth, Les Eléments collection has offered a unique, unending journey of scent through execptional creation embodying Grasse's most venerable tradition.
             </p>
-            <section className='container row gy-3 gy-md-5 my-1'>
+            <section className='container row gy-3 gy-md-5 my-1 mx-0'>
                 {
                     items.slice(0, 6).map(item => <Inventory key={item._id} item={item} />)
                 }
@@ -36,7 +36,7 @@ const Home = () => {
             <section className='my-5'>
                 <Creation />
             </section>
-            <section><OurUniverse/></section>
+            <section><OurUniverse /></section>
         </div>
     );
 };

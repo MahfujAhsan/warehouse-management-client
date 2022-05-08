@@ -6,7 +6,7 @@ const ManageInventories = () => {
     const [items, setIteams] = useState([]);
     useEffect(() => {
         const url = 'https://powerful-dawn-08831.herokuapp.com/inventory';
-        <Spinner/>
+        <Spinner />
         fetch(url)
             .then(res => res.json())
             .then(data => setIteams(data))
@@ -51,7 +51,7 @@ const ManageInventories = () => {
                 }
             </section>
             <div className='text-center my-5 d-flex flex-column'>
-                <Link style={{ border: '3px solid #BF5737'}} className='w-25 mx-auto text-decoration-none px-5 py-3 rounded text-dark fw-bold fs-6 shadow-lg' to="/addItems">Add New Item</Link>
+                <Link style={{ border: '3px solid #BF5737' }} className='w-25 mx-auto text-decoration-none px-5 py-3 rounded text-dark fw-bold fs-6 shadow-lg' to="/addItems">Add New Item</Link>
             </div>
         </div>
     );

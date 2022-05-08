@@ -1,34 +1,30 @@
-import axios from 'axios';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import auth from '../../Firebase.init';
 
 
 const AddItems = () => {
+    const [user] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const onSubmit = data => {
-        console.log(data)
-        const url = `https://powerful-dawn-08831.herokuapp.com/myItems`
-        // fetch(url, {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // })
-        //     .then(res => res.json())
-        //     .then(result => {
-        //         console.log(result)
-        //     })
-        axios.post(url, data)
-            .then(response => {
-                const { data } = response;
-                if (data.insertedId) {
+        const url = 'https://powerful-dawn-08831.herokuapp.com/inventory'
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({ data }),
+            headers: {
+                'authorization': `${user.email} ${localStorage.getItem('accessToken')}`,
+                'content-type': 'application/json; charsetUFT=8',
+            },
+        })
+            .then((response) => response.json())
+            .then(data => {
+                if (data) {
                     toast('Your Item is Uploaded')
                     navigate('/manageInventories')
-                    console.log(data)
                 }
             })
     };

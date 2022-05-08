@@ -12,15 +12,15 @@ const OurUniverse = () => {
                 <div style={{ borderBottom: "2px solid #67696A" }} className='w-25'></div>
             </div>
             <div className='row gy-3 gx-md-5'>
-                <div role="button" className='col-12 col-md-4 bg-image hover-zoom position-relative'>
+                <div role="button" className='col-12 col-md-4 bg-image hover-zoom position-relative px-5'>
                     <img className='rounded w-100' src={univ1} alt="" />
                     <button style={{ marginTop: "30px" }} className='w-100 text-center rounded py-2 fw-bold border border-0 bg-white'>A FAMILY STORY</button>
                 </div>
-                <div className='col-12 col-md-4 bg-image hover-zoom position-relative'>
+                <div className='col-12 col-md-4 bg-image hover-zoom position-relative px-5'>
                     <img className='rounded w-100' src={univ2} alt="" />
                     <button style={{ marginTop: "30px" }} className='w-100 text-center rounded py-2 fw-bold border border-0 bg-white'>MANIFESTO</button>
                 </div>
-                <div className='col-12 col-md-4 bg-image hover-zoom position-relative'>
+                <div className='col-12 col-md-4 bg-image hover-zoom position-relative px-5'>
                     <img className='rounded w-100' src={univ3} alt="" />
                     <button style={{ marginTop: "30px" }} className='w-100 text-center rounded py-2 fw-bold border border-0 bg-white'>MADE IN GRASSE</button>
                 </div>
