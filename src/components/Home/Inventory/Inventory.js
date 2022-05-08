@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
+import {useNavigate } from 'react-router-dom';
 
 const Inventory = ({ item }) => {
-    const { _id, name, image, shortDescription, price, quantity } = item;
+    const { _id, email, name, image, shortDescription, price, quantity } = item;
     const navigate = useNavigate();
 
     const navigateToItemDetails = id => {
         navigate(`/inventory/${id}`)
     }
     return (
-        <div role="button" className='col-4 bg-image hover-zoom'>
-            <div style={{ height: "800px" }} className='border border-2 border-dark rounded p-3 position-relative'>
-                <h3 className='fs-6 text-center'>{name}</h3>
+        <div role="button" className='col-12 col-md-4 bg-image hover-zoom'>
+            <div style={{ maxHeight: "800px" }} className='border border-2 border-dark rounded p-3 position-relative'>
+                <h3 className='fs-5 fs-md-6 text-center'>{name}</h3>
                 <div className="p-4">
                     <img className="rounded w-100" src={image} alt='inventoryItem' />
                 </div>
@@ -21,13 +21,16 @@ const Inventory = ({ item }) => {
                 <div className='p-2'>
                     <div className='mb-5'>
                         <div className='d-flex justify-content-between align-items-center pb-1'>
-                            <p className='w-50 my-auto'>Price : </p><span style={{ color: '#BF5737' }} className='text-center rounded font-monospace w-50 fw-bold fs-4'>{price}€</span>
+                            <p className='w-50 my-auto'>Price : </p><span style={{ color: '#BF5737' }} className='text-end rounded font-monospace w-50 fw-bold fs-6 fs-md-5'>{price}€</span>
                         </div>
                         <div className='d-flex justify-content-between align-items-center pb-1'>
-                            <p className='w-50 my-auto'>Manufacturer : </p><h4 style={{ color: '#BF5737' }} className='text-center fs-5'>{item.manufacturer}</h4>
+                            <p className='w-40 my-auto'>Manufacturer : </p><h4 style={{ color: '#BF5737' }} className='text-center fs-6 m-0 fs-md-5'>{item.manufacturer}</h4>
+                        </div>
+                        <div className='d-flex justify-content-between align-items-center pb-1'>
+                            <p className='w-40 my-auto'>Manufacturer : </p><h4 style={{ color: '#BF5737' }} className='text-center fs-6 m-0 fs-md-5'>{item.email}</h4>
                         </div>
                         <div className='d-flex justify-content-between align-items-center'>
-                            <p className='w-50 my-auto'>Quantity : </p><input className='text-center rounded font-monospace w-50 fw-bold' style={{ border: '2px solid #BF5737' }} type="number" value={quantity} name="quantity" />
+                            <p className='w-50 my-auto'>Quantity : </p><input className='text-center rounded font-monospace w-50 py-0 fw-bold' style={{ border: '2px solid #BF5737' }} type="number" value={quantity} name="quantity" />
                         </div>
                     </div>
                 </div>

@@ -1,10 +1,10 @@
 import React from 'react';
+import loadingSpinner from "../../media/dbeb4d96a3ac25b12f5dbe71d3a0bfcc.gif"
 
 const Spinner = () => {
     return (
-        <div className='vh-100 d-flex align-items-center'>
-            <button className="btn btn-primary" type="button" disabled>
-                <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>Loading...</button>
+        <div className='w-50 mx-auto'>
+            <img style={{maxHeight: "500px"}} className='w-100 mx-auto' src={loadingSpinner} alt="" />
         </div>
     );
 };

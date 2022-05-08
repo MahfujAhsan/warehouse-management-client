@@ -2,7 +2,6 @@ import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
 import molinardLogo from "../../media/logo.png";
 import auth from '../../Firebase.init';
 import CustomLink from './CustomLink/CustomLink';
@@ -13,28 +12,28 @@ const Header = () => {
         signOut(auth);
     };
     return (
-        <div>
-            <div className='text-center w-50 mx-auto mb-3'>
-                <img className='img-fluid' src={molinardLogo} alt="" />
+        <div className='d-flex justify-content-between align-items-center flex-md-column my-2 my-md-0'>
+            <div className='text-center w-md-50 mx-auto my-md-3'>
+                <img className='w-75 w-md-100' src={molinardLogo} alt="" />
             </div>
-            <Navbar className='container' collapseOnSelect expand="lg">
-                <Container>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="mx-auto">
-                            <CustomLink className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold' to="/">Home</CustomLink>
+            <Navbar className='container shadow-none' collapseOnSelect expand="lg">
+                <Container className=''>
+                    <Navbar.Toggle style={{ backgroundColor: "#fff"}} aria-controls="responsive-navbar-nav" className='ms-auto text-dark' />
+                    <Navbar.Collapse id="responsive-navbar-nav" className='text-end'>
+                        <Nav className="mx-auto mt-3 mt-md-0">
+                            <CustomLink className='text-decoration-none ms-md-3 fs-6 fs-5 text-dark px-2 px-md-3 py-md-2 rounded text-uppercase' to="/">Home</CustomLink>
                             {
-                                user ? <CustomLink className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold' to="/manageItems">Manage Items</CustomLink> : ''
+                                user ? <CustomLink className='text-decoration-none ms-md-3 fs-6 fs-5 text-dark px-2 px-md-3 py-md-2 rounded text-uppercase' to="/manageInventories">Manage Inv.</CustomLink> : ''
                             }
                             {
-                                user ? <CustomLink className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold' to="/addItems">Add Items</CustomLink> : ''
+                                user ? <CustomLink className='text-decoration-none ms-md-3 fs-6 fs-5 text-dark px-2 px-md-3 py-md-2 rounded text-uppercase' to="/addItems">Add Items</CustomLink> : ''
                             }
                             {
-                                user ? <CustomLink className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold' to="/myItems">My Items</CustomLink> : ''
+                                user ? <CustomLink className='text-decoration-none ms-md-3 fs-6 fs-5 text-dark px-2 px-md-3 py-md-2 rounded text-uppercase' to="/myItems">My Items</CustomLink> : ''
                             }
                             {/* <span>{user?.displayName && user.displayName}</span> */}
                             {
-                                user ? <CustomLink onClick={handleSignOut} to="/login" className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold'>SignOut</CustomLink> : <CustomLink className='text-decoration-none ms-3 fs-5 text-dark px-3 py-2 rounded fw-bold' to="/login">LogIn</CustomLink>
+                                user ? <CustomLink onClick={handleSignOut} to="/login" className='text-decoration-none ms-md-3 fs-6 fs-5 text-dark px-2 px-md-3 py-md-2 rounded fw-bold'>SignOut</CustomLink> : <CustomLink className='text-decoration-none ms-md-3 fs-6 fs-5 text-dark px-2 px-md-3 py-md-2 rounded fw-bold' to="/login">LogIn</CustomLink>
                             }
                             
                         </Nav>
