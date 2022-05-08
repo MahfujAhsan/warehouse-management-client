@@ -4,7 +4,6 @@ import heroBG from "../../media/hero-section-bg.jpg";
 import OurUniverse from '../OurUniverse/OurUniverse';
 import Creation from './Creation/Creation';
 import Inventory from './Inventory/Inventory';
-// const axios = require('axios').default;
 
 const Home = () => {
     const [items, setItems] = useState([]);

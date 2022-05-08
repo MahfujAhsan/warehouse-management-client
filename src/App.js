@@ -20,11 +20,8 @@ function App() {
     <div>
       <Header />
       <Routes>
-      <Route path='*' element={<NotFound/>}></Route>
+      <Route path="*" element={<NotFound/>}></Route>
         <Route path='/' element={<Home />}></Route>
-        <Route path='/inventory'>
-            <Inventory/>
-        </Route>
         <Route path='/inventory/:itemId' element={
           <ProtectRoute>
             <ManageItems />
