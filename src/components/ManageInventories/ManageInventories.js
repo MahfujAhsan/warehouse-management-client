@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Spinner from '../Spinner/Spinner';
 
 const ManageInventories = () => {
@@ -44,9 +44,6 @@ const ManageInventories = () => {
                                 </div>
                                 <div>
                                     <h6>Quantity: <span className='text-danger fs-5'>{item.quantity}</span></h6>
-                                </div>
-                                <div>
-                                    <h6>Quantity: <span className='text-danger fs-5'>{item.email}</span></h6>
                                 </div>
                                 <button onClick={() => handleItemDelete(item._id)} className='w-75 mb-2 position-absolute bottom-0 start-50 translate-middle-x rounded py-2 fw-bold border border-dark border-2 btn btn-dark'>Delete</button>
                             </div>

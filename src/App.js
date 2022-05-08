@@ -3,6 +3,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import AddItems from './components/AddItems/AddItems';
+import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
@@ -34,6 +35,7 @@ function App() {
         <Route path='/signup' element={<SignUp />}></Route>
       </Routes>
       <ToastContainer/>
+      <Footer/>
     </div>
   );
 }

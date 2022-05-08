@@ -5,12 +5,12 @@ import auth from '../../Firebase.init';
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
-    console.log(user)
+    console.log(auth.currentUser)
     const [items, setItems] = useState([]);
     useEffect(() => {
         const getItems = async () => {
             const email = user.email;
-            const url = `http://localhost:5000/myItems?email=${email}`;
+            const url = `https://powerful-dawn-08831.herokuapp.com/myItems?email=${email}`;
             const { data } = await axios.get(url);
             setItems(data)
         }

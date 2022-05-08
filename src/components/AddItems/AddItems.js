@@ -10,7 +10,7 @@ const AddItems = () => {
     const navigate = useNavigate();
     const onSubmit = data => {
         console.log(data)
-        const url = `http://localhost:5000/myItems`
+        const url = `https://powerful-dawn-08831.herokuapp.com/myItems`
         // fetch(url, {
         //     method: 'POST',
         //     headers: {
@@ -41,7 +41,7 @@ const AddItems = () => {
                 <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 fs-6 py-md-3 ps-3 text-dark rounded' type="number" placeholder='Price' {...register("price")} />
                 <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 fs-6 py-md-3 ps-3 text-dark rounded' type="number" placeholder='Quantity' {...register("quantity")} />
                 <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 ps-3 text-dark' type="url" placeholder='Img Url' {...register("image")} />
-                <input type="submit" className='btn btn-light w-100 mx-auto d-block py-md-2  border border-3 border-dark shadow-none text-capitalize fs-md-5 mt-md-4 fs-6' value="Upload Product"/>
+                <input type="submit" className='btn btn-light w-100 mx-auto d-block py-md-2  border border-3 border-dark shadow-none text-capitalize fs-md-5 mt-md-4 fs-6' value="Upload Product" />
             </form>
         </div>
     );
