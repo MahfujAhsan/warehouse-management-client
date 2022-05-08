@@ -28,7 +28,7 @@ const SignUp = () => {
             return toast('You Should at least 6 character to create a SecretKeY')
         }
         await createUserWithEmailAndPassword(email, password);
-        await updateProfile({ displayName: `${firstName} ${lastName}`});
+        await updateProfile(`{ displayName: ${firstName} ${lastName}}`);
         if(email && password) {
             toast('Congrats, Please Verfify Your Email.')
         };

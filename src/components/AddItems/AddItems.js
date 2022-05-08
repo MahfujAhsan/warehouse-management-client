@@ -10,7 +10,7 @@ const AddItems = () => {
     const navigate = useNavigate();
     const onSubmit = data => {
         console.log(data)
-        const url = `https://powerful-dawn-08831.herokuapp.com/inventory`
+        const url = `http://localhost:5000/myItems`
         // fetch(url, {
         //     method: 'POST',
         //     headers: {
@@ -36,11 +36,11 @@ const AddItems = () => {
         <div className='w-50 mx-auto my-3'>
             <h3 style={{ letterSpacing: "0.1rem" }} className='text-center text-uppercase my-4 fw-bold font-monospace fs-6 fs-3'>Add Your Product</h3>
             <form style={{ fontFamily: "monospace" }} className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
-                {/* <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 fs-6 py-md-3 ps-3 text-dark rounded' type="email" placeholder='Your Email' {...register("email")} /> */}
                 <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 fs-6 py-md-3 ps-3 text-dark rounded' type="text" placeholder='Item Name' {...register("name", { required: true })} />
-                <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 fs-6 py-md-3 ps-3 text-dark rounded' type="number" placeholder='price' {...register("price")} />
-                <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 fs-6 py-md-3 ps-3 text-dark rounded' type="number" placeholder='quantity' {...register("quantity")} />
-                <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 ps-3 text-dark' type="url" placeholder='img url' {...register("image")} />
+                <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 fs-6 py-md-3 ps-3 text-dark rounded' type="text" placeholder='Manufacturer' {...register("manufacturer", { required: true })} />
+                <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 fs-6 py-md-3 ps-3 text-dark rounded' type="number" placeholder='Price' {...register("price")} />
+                <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 fs-6 py-md-3 ps-3 text-dark rounded' type="number" placeholder='Quantity' {...register("quantity")} />
+                <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 ps-3 text-dark' type="url" placeholder='Img Url' {...register("image")} />
                 <input type="submit" className='btn btn-light w-100 mx-auto d-block py-md-2  border border-3 border-dark shadow-none text-capitalize fs-md-5 mt-md-4 fs-6' value="Upload Product"/>
             </form>
         </div>

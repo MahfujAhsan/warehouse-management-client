@@ -26,9 +26,6 @@ const Inventory = ({ item }) => {
                         <div className='d-flex justify-content-between align-items-center pb-1'>
                             <p className='w-40 my-auto'>Manufacturer : </p><h4 style={{ color: '#BF5737' }} className='text-center fs-6 m-0 fs-md-5'>{item.manufacturer}</h4>
                         </div>
-                        <div className='d-flex justify-content-between align-items-center pb-1'>
-                            <p className='w-40 my-auto'>Manufacturer : </p><h4 style={{ color: '#BF5737' }} className='text-center fs-6 m-0 fs-md-5'>{item.email}</h4>
-                        </div>
                         <div className='d-flex justify-content-between align-items-center'>
                             <p className='w-50 my-auto'>Quantity : </p><input className='text-center rounded font-monospace w-50 py-0 fw-bold' style={{ border: '2px solid #BF5737' }} type="number" value={quantity} name="quantity" />
                         </div>

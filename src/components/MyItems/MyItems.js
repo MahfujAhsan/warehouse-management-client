@@ -9,8 +9,8 @@ const MyItems = () => {
     const [items, setItems] = useState([]);
     useEffect(() => {
         const getItems = async () => {
-            const email = user?.email;
-            const url = `http://localhost:5000/inventory?email=${email}`;
+            const email = user.email;
+            const url = `http://localhost:5000/myItems?email=${email}`;
             const { data } = await axios.get(url);
             setItems(data)
         }
