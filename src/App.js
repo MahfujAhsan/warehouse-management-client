@@ -23,9 +23,7 @@ function App() {
       <Route path='*' element={<NotFound/>}></Route>
         <Route path='/' element={<Home />}></Route>
         <Route path='/inventory'>
-          <ProtectRoute>
             <Inventory/>
-          </ProtectRoute>
         </Route>
         <Route path='/inventory/:itemId' element={
           <ProtectRoute>
