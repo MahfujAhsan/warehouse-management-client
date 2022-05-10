@@ -35,6 +35,9 @@ const Header = () => {
                                 user ? <CustomLink className='text-decoration-none ms-md-3 fs-6 fs-5 text-dark px-2 px-md-3 py-md-2 rounded text-uppercase' to="/myItems">My Items</CustomLink> : ''
                             }
                             {
+                                user ? <CustomLink className='text-decoration-none ms-md-3 fs-6 fs-5 text-dark px-2 px-md-3 py-md-2 rounded text-uppercase' to="/blogs">Blogs</CustomLink> : ''
+                            }
+                            {
                                 user ? <CustomLink onClick={handleSignOut} to="/login" className='text-decoration-none ms-md-3 fs-6 fs-5 text-dark px-2 px-md-3 py-md-2 rounded fw-bold'>SignOut</CustomLink> : <CustomLink className='text-decoration-none ms-md-3 fs-6 fs-5 text-dark px-2 px-md-3 py-md-2 rounded fw-bold' to="/login">LogIn</CustomLink>
                             }
                             

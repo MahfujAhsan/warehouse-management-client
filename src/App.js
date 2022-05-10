@@ -3,6 +3,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import AddItems from './components/AddItems/AddItems';
+import Blogs from './components/Blogs/Blogs';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
@@ -42,6 +43,7 @@ function App() {
             <MyItems />
           </ProtectRoute>
         }></Route>
+        <Route path='/blogs' element={<Blogs/>}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
       </Routes>
