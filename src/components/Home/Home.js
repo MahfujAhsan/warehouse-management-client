@@ -8,8 +8,8 @@ import Inventory from './Inventory/Inventory';
 const Home = () => {
     const [items, setItems] = useState([]);
     useEffect(() => {
-        const url = 'https://powerful-dawn-08831.herokuapp.com/inventory'
-        
+        const url = 'http://localhost:5000/inventory'
+
         fetch(url)
             .then(res => res.json())
             .then(data => setItems(data))

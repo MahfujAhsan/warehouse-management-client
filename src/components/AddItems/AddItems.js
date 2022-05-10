@@ -11,10 +11,10 @@ const AddItems = () => {
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const onSubmit = data => {
-        const url = 'https://powerful-dawn-08831.herokuapp.com/addItems'
+        const url = 'http://localhost:5000/addItems'
         fetch(url, {
             method: 'POST',
-            body: JSON.stringify({ data }),
+            body: JSON.stringify(data),
             headers: {
                 'authorization': `${user?.email} ${localStorage.getItem('accessToken')}`,
                 'content-type': 'application/json; charsetUFT=8',
@@ -32,7 +32,9 @@ const AddItems = () => {
         <div className='w-50 mx-auto my-3'>
             <h3 style={{ letterSpacing: "0.1rem" }} className='text-center text-uppercase my-4 fw-bold font-monospace fs-6 fs-3'>Add Your Product</h3>
             <form style={{ fontFamily: "monospace" }} className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
-                <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 fs-6 py-md-3 ps-3 text-dark rounded' type="text" placeholder='Item Name' {...register("name", { required: true })} />
+                {/* <input type="text" value={user.email} /> */}
+                <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 fs-6 py-md-3 ps-3 text-dark rounded' type="text" {...register("name", { required: true })} value={user.email} readOnly />
+                {/* <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 fs-6 py-md-3 ps-3 text-dark rounded' type="text" placeholder='Product Name' {...register("name", { required: true })} /> */}
                 <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 fs-6 py-md-3 ps-3 text-dark rounded' type="text" placeholder='Manufacturer' {...register("manufacturer", { required: true })} />
                 <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 fs-6 py-md-3 ps-3 text-dark rounded' type="number" placeholder='Price' {...register("price")} />
                 <input style={{ border: "3px solid #BF5737" }} className='mb-4 py-2 fs-6 py-md-3 ps-3 text-dark rounded' type="number" placeholder='Quantity' {...register("quantity")} />

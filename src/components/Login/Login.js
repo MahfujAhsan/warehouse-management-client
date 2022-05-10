@@ -26,7 +26,7 @@ const Login = () => {
     };
 
     if (user) {
-        const url = 'https://powerful-dawn-08831.herokuapp.com/login';
+        const url = 'http://localhost:5000/login';
         fetch(url, {
             method: 'POST',
             body: JSON.stringify({
@@ -54,9 +54,9 @@ const Login = () => {
                 <button onClick={() => { signInWithEmailAndPassword(email, password) }} type="submit" className="btn btn-light w-50 mx-auto d-block py-md-2  border border-3 border-dark shadow-none text-capitalize fs-5 mt-md-4 my-3 fw-bold">Login</button>
             </div>
             <div>
-            {
-                loading && <p className='text-danger fw-bold text-center my-3'>Loading...</p>
-            }
+                {
+                    loading && <p className='text-danger fw-bold text-center my-3'>Loading...</p>
+                }
             </div>
             <p style={{ color: "#BF5737", fontSize: "16px" }} className='text-center fw-bold fs-6 mt-3'>{errorElement}</p>
             <div>
@@ -64,9 +64,9 @@ const Login = () => {
             </div>
             <p className='text-center font-monospace'>Forgot Password? <button onClick={handlePasswordReset} className='text-danger fw-bold pe-auto border border-0 bg-white'>Get New One.</button></p>
             <div>
-            {
-                sending && <p className='text-danger fw-bold text-center my-3'>Check Email</p>
-            }
+                {
+                    sending && <p className='text-danger fw-bold text-center my-3'>Check Email</p>
+                }
             </div>
             <div className='text-center'>
                 <SocialLog></SocialLog>

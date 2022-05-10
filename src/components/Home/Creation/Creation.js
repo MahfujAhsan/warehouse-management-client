@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../../media/picto-logo.png";
+import videoMP from "../../../media/videoplayback.mp4"
 
 const Creation = () => {
     return (
@@ -21,8 +22,8 @@ const Creation = () => {
                         </div>
                     </div>
                 </div>
-                <div className='col-12 col-md-6 border border-2 border-dark p-0'>
-                    <iframe title='iframe'  id="ytplayer" type="text/html" width="560px" height="600px" src="https://www.youtube.com/embed/y-0v7fVko_I"></iframe>
+                <div className='col-12 col-md-6 border border-2 border-dark p-0 d-flex align-items-center bg-light'>
+                    <video src={videoMP} class="ratio" controls autoPlay muted></video>
                 </div>
             </div>
         </div>

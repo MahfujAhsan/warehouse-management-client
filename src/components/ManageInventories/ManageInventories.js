@@ -5,7 +5,7 @@ import Spinner from '../Spinner/Spinner';
 const ManageInventories = () => {
     const [items, setIteams] = useState([]);
     useEffect(() => {
-        const url = 'https://powerful-dawn-08831.herokuapp.com/inventory';
+        const url = 'http://localhost:5000/inventory';
         <Spinner />
         fetch(url)
             .then(res => res.json())
@@ -15,7 +15,7 @@ const ManageInventories = () => {
         const proceed = window.confirm('Are You Sure?');
         if (proceed) {
             console.log(id)
-            const url = `https://powerful-dawn-08831.herokuapp.com/inventory/${id}`
+            const url = `http://localhost:5000/inventory/${id}`
             fetch(url, {
                 method: "DELETE"
             })
@@ -35,7 +35,6 @@ const ManageInventories = () => {
                     items.map(item =>
                         <div key={item._id} role="button" className='col-12 col-md-4 text-center bg-image hover-zoom position-relative'>
                             <div style={{ maxHeight: "500px" }} className='border border-2 p-3'>
-                                <h6>{item.name}</h6>
                                 <div className='p-5'>
                                     <img className='w-50' src={item.image} alt="" />
                                 </div>

@@ -7,7 +7,7 @@ const ManageItems = () => {
     const [item, setItem] = useState({});
 
     useEffect(() => {
-        const url = `https://powerful-dawn-08831.herokuapp.com/inventory/${itemId}`;
+        const url = `http://localhost:5000/inventory/${itemId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -23,7 +23,7 @@ const ManageItems = () => {
         e.preventDefault()
         const quantity = e.target.quantity.value - 1;
         const updatedQuantity = { quantity };
-        const url = `https://powerful-dawn-08831.herokuapp.com/inventory/${itemId}`;
+        const url = `http://localhost:5000/inventory/${itemId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -41,7 +41,7 @@ const ManageItems = () => {
         e.preventDefault()
         const quantity = parseInt(e.target.restockQuantity.value) + item.quantity;
         const updatedStock = { quantity };
-        const url = `https://powerful-dawn-08831.herokuapp.com/inventory/${itemId}`;
+        const url = `http://localhost:5000/inventory/${itemId}`;
         <Spinner />
         fetch(url, {
             method: 'PUT',

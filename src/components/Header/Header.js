@@ -15,7 +15,7 @@ const Header = () => {
         navigate('/login')
     };
     return (
-        <div className='d-flex justify-content-between align-items-center flex-md-column my-2 my-md-0'>
+        <div style={{backgroundColor: "rgba(255, 194, 225, 0.8)"}} className='d-flex justify-content-between align-items-center flex-md-column my-2 my-md-0 sticky-top'>
             <div className='text-center w-md-50 mx-auto my-md-3'>
                 <img className='w-75 w-md-100' src={molinardLogo} alt="" />
             </div>
@@ -34,7 +34,6 @@ const Header = () => {
                             {
                                 user ? <CustomLink className='text-decoration-none ms-md-3 fs-6 fs-5 text-dark px-2 px-md-3 py-md-2 rounded text-uppercase' to="/myItems">My Items</CustomLink> : ''
                             }
-                            <span>{user?.displayName && user?.displayName}</span>
                             {
                                 user ? <CustomLink onClick={handleSignOut} to="/login" className='text-decoration-none ms-md-3 fs-6 fs-5 text-dark px-2 px-md-3 py-md-2 rounded fw-bold'>SignOut</CustomLink> : <CustomLink className='text-decoration-none ms-md-3 fs-6 fs-5 text-dark px-2 px-md-3 py-md-2 rounded fw-bold' to="/login">LogIn</CustomLink>
                             }
