@@ -11,7 +11,7 @@ https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-MahfujAhs
 ## [StackOverflow Qustion](https://molhttps://stackoverflow.com/questions/72169355/npm-err-exit-status-1-heroku-logs-tail-nodejs) : 
 https://stackoverflow.com/questions/72169355/npm-err-exit-status-1-heroku-logs-tail-nodejs
 
-# Technologies That Uses in Front End Project:
+# Technologies That Uses in Frontend:
 * ReactJs
 * Bootstrap 5
 * React Toastify
@@ -20,3 +20,10 @@ https://stackoverflow.com/questions/72169355/npm-err-exit-status-1-heroku-logs-t
 * React Firebase Hooks
 * MDB UI Kit
 * React Hook Form
+
+# Technologies That Uses in Backend:
+* express
+* dotenv
+* cors (middleware)
+* mongodb (database)
+* Jsonwebtoken
