@@ -9,7 +9,7 @@ const MyItems = () => {
     useEffect(() => {
         const saveOrders = () => {
             const email = user.email
-            const url = `https://secret-basin-93234.herokuapp.com/myItems?email=${email}`;
+            const url = `https://floating-reef-95698.herokuapp.com/myItems?email=${email}`;
             fetch(url)
                 .then(res => res.json())
                 .then(data => setItems(data))
@@ -21,7 +21,7 @@ const MyItems = () => {
         const proceed = window.confirm('Are You Sure?');
         if (proceed) {
             console.log(id)
-            const url = `https://secret-basin-93234.herokuapp.com/inventory/${id}`
+            const url = `https://floating-reef-95698.herokuapp.com/inventory/${id}`
             fetch(url, {
                 method: "DELETE"
             })

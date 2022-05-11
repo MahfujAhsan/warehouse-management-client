@@ -26,7 +26,7 @@ const Login = () => {
     };
 
     if (user) {
-        const url = 'https://secret-basin-93234.herokuapp.com/login';
+        const url = 'https://floating-reef-95698.herokuapp.com/login';
         fetch(url, {
             method: 'POST',
             body: JSON.stringify({
