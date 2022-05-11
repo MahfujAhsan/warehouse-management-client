@@ -11,7 +11,7 @@ const AddItems = () => {
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
     const onSubmit = data => {
-        const url = 'http://localhost:5000/addItems'
+        const url = 'https://secret-basin-93234.herokuapp.com/addItems'
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(data),

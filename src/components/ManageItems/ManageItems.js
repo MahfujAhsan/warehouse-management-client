@@ -7,7 +7,7 @@ const ManageItems = () => {
     const [item, setItem] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:5000/inventory/${itemId}`;
+        const url = `https://secret-basin-93234.herokuapp.com/inventory/${itemId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -23,7 +23,7 @@ const ManageItems = () => {
         e.preventDefault()
         const quantity = e.target.quantity.value - 1;
         const updatedQuantity = { quantity };
-        const url = `http://localhost:5000/inventory/${itemId}`;
+        const url = `https://secret-basin-93234.herokuapp.com/inventory/${itemId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -41,7 +41,7 @@ const ManageItems = () => {
         e.preventDefault()
         const quantity = parseInt(e.target.restockQuantity.value) + item.quantity;
         const updatedStock = { quantity };
-        const url = `http://localhost:5000/inventory/${itemId}`;
+        const url = `https://secret-basin-93234.herokuapp.com/inventory/${itemId}`;
         <Spinner />
         fetch(url, {
             method: 'PUT',

@@ -8,7 +8,7 @@ import Inventory from './Inventory/Inventory';
 const Home = () => {
     const [items, setItems] = useState([]);
     useEffect(() => {
-        const url = 'http://localhost:5000/inventory'
+        const url = 'https://secret-basin-93234.herokuapp.com/inventory'
 
         fetch(url)
             .then(res => res.json())

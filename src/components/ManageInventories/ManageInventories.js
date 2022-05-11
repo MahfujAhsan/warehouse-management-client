@@ -5,7 +5,7 @@ import Spinner from '../Spinner/Spinner';
 const ManageInventories = () => {
     const [items, setIteams] = useState([]);
     useEffect(() => {
-        const url = 'http://localhost:5000/inventory';
+        const url = 'https://secret-basin-93234.herokuapp.com/inventory';
         <Spinner />
         fetch(url)
             .then(res => res.json())
@@ -15,7 +15,7 @@ const ManageInventories = () => {
         const proceed = window.confirm('Are You Sure?');
         if (proceed) {
             console.log(id)
-            const url = `http://localhost:5000/inventory/${id}`
+            const url = `https://secret-basin-93234.herokuapp.com/inventory/${id}`
             fetch(url, {
                 method: "DELETE"
             })
